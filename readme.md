@@ -40,7 +40,7 @@ To guarantee that the correct style is being used, make sure that your custom co
 }
 
 /* Dark color mode style: */
-[data-theme="light"] :root {
+[data-theme="dark"] :root {
     --textColor: "white";
     --backgroundColor: "black"; 
 }
