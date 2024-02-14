@@ -24,23 +24,23 @@ To use the Color Mode Module in your project, you can include the JavaScript fil
 
 ### Setting your CSS file
 
-To guarantee that the correct style is being used, make sure that your custom color mode styles are inside the ```[data-theme='light']``` or ```[data-theme='dark']``` selectors in your CSS file:
+To guarantee that the correct style is being used, make sure that your custom color mode styles are inside the ```:root.lightMode``` or ```:root.darkMode``` selectors in your CSS file:
 
 ```css
-/* Safety style in case data-theme attribute is not set: */
+/* Safety style in case root class is not set: */
 :root {
     --textColor: "black";
     --backgroundColor: "white"; 
 }
 
 /* Light color mode style: */
-[data-theme="light"] :root {
+:root.lightMode {
     --textColor: "black";
     --backgroundColor: "white"; 
 }
 
 /* Dark color mode style: */
-[data-theme="dark"] :root {
+:root.darkMode {
     --textColor: "white";
     --backgroundColor: "black"; 
 }
@@ -58,10 +58,10 @@ import { updateColorMode, colorMode, localStorageAvailable } from 'colorModeMoul
 
 #### Updating the color mode via localStorage
 
-If your web page is storing the user's preference, you can update the style as soon as the DOM content is loaded by calling the ```updateColorMode()``` function with the arguments ```useLocalStorage: true``` and ```colorModePreference: null```:
+If your web page is storing the user's preference, you can update the style by calling the ```updateColorMode()``` function with the arguments ```useLocalStorage: true``` and ```colorModePreference: null```:
 
 ```js
-document.addEventListener("DOMContentLoaded", () => updateColorMode(true, null))
+updateColorMode(true, null);
 ```
 
 > The code won't have effect if the user manually disabled localStorage.
