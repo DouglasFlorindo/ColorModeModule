@@ -27,12 +27,6 @@ To use the Color Mode Module in your project, you can include the JavaScript fil
 To guarantee that the correct style is being used, make sure that your custom color mode styles are inside the ```:root.lightMode``` or ```:root.darkMode``` selectors in your CSS file:
 
 ```css
-/* Safety style in case root class is not set: */
-:root {
-    --textColor: "black";
-    --backgroundColor: "white"; 
-}
-
 /* Light color mode style: */
 :root.lightMode {
     --textColor: "black";
@@ -43,6 +37,12 @@ To guarantee that the correct style is being used, make sure that your custom co
 :root.darkMode {
     --textColor: "white";
     --backgroundColor: "black"; 
+}
+
+/* Safety style in case root class is not set (won't override previous styles because of specificity): */
+:root {
+    --textColor: "black";
+    --backgroundColor: "white"; 
 }
 ```
 
