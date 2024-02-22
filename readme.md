@@ -6,19 +6,10 @@ The Color Mode Module is a complete JavaScript module made to update and toggle 
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [API Reference](#api-reference)
-4. [Contributing](#contributing)
-5. [License](#license)
-
-## Installation
-
-To use the Color Mode Module in your project, you can include the JavaScript file in your HTML:
-
-```html
-<script src="path/to/colorModeModule.js"></script>
-```
+1. [Usage](#usage)
+2. [API Reference](#api-reference)
+3. [Contributing](#contributing)
+4. [License](#license)
 
 ## Usage
 
@@ -58,13 +49,20 @@ import { updateColorMode, colorMode, localStorageAvailable } from 'colorModeMoul
 
 #### Updating the color mode via localStorage
 
-If your web page is storing the user's preference, you can update the style by calling the ```updateColorMode()``` function with the arguments ```useLocalStorage: true``` and ```colorModePreference: null```:
+If your web page is storing the user's preference, you can update the style by adding the ```colorModeModule.min.js``` code into your ```<head>``` tag, and then calling the ```updateColorMode()``` function with the arguments ```useLocalStorage: true``` and ```colorModePreference: null```:
 
-```js
-updateColorMode(true, null);
+```html
+<head>
+    <script>
+        // colorModeModule.min.js code goes here.
+        updateColorMode(true, null);
+    </script>
+</head>
 ```
 
 > The code won't have effect if the user manually disabled localStorage.
+
+Copying the code into your ```<head>``` tag is especially important to avoid flashing an undesired style before the code updates the color mode.
 
 #### Setting the color mode
 
